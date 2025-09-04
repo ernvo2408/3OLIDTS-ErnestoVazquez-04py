@@ -1,0 +1,69 @@
+Nombres: 
+Apellidos: 
+Edad:  anos
+Estatura: 
+Estatura: 
+Telefono: 
+Genero: Mujer
+
+Nombres: 
+Apellidos: 
+Edad:  anos
+Estatura: 
+Estatura: 
+Telefono: 
+Genero: Mujer
+
+Nombres: 
+Apellidos: 
+Edad:  anos
+Estatura: 
+Estatura: 
+Telefono: 
+Genero: Mujer
+
+Nombres: 
+Apellidos: 
+Edad:  anos
+Estatura: 
+Estatura: 
+Telefono: 
+Genero: Mujer
+
+Nombres: 
+Apellidos: 
+Edad:  anos
+Estatura: 
+Estatura: 
+Telefono: 
+Genero: Mujer
+
+Nombres: 
+Apellidos: 
+Edad:  anos
+Estatura: 
+Estatura: 
+Telefono: 
+Genero: 
+
+
+Yair
+
+Nombres: Ernesto
+Apellidos: Vazquez Ocaña
+Edad: 19 anos
+Estatura: 
+Estatura: 1.65
+Telefono: 968 106 6738
+Genero: Hombre
+
+
+Nombres: fermin isias
+Apellidos: palacios
+Edad: 20 anos
+Estatura: 
+Estatura: 200
+Telefono: quiterio
+Genero: Hombre
+
+
