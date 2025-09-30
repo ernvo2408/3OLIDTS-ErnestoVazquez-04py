@@ -2,6 +2,7 @@
 #formulario de reistro almacenamiento en txt sin validacion
 import tkinter as tk
 from tkinter import messagebox
+
 #---------------------------definicion de funciones-------------------------------
 def limpiar_campos():
     tbNombre.delete(0, tk.END)
