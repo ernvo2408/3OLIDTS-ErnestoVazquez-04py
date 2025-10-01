@@ -67,3 +67,30 @@ Telefono: quiterio
 Genero: Hombre
 
 
+Nombres: 
+Apellidos: 
+Edad:  anos
+Estatura: 
+Estatura: 
+Telefono: 9681066738
+Genero: 
+
+
+Nombres: Ernesto
+Apellidos: Vazquez Ocaña
+Edad: 19 anos
+Estatura: 
+Estatura: 1.65
+Telefono: 9681066738
+Genero: Hombre
+
+
+Nombres: 
+Apellidos: 
+Edad:  anos
+Estatura: 
+Estatura: 
+Telefono: 
+Genero: 
+
+

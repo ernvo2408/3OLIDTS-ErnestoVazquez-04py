@@ -1,0 +1,7 @@
+Nombres: Ernesto
+Apellidos: Vazquez ocana
+Edad: 19 años
+Estatura: 1.65 cm
+Teléfono: 9681066738
+Género: Hombre
+

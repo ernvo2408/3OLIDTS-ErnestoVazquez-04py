@@ -2,6 +2,43 @@
 #formulario de reistro almacenamiento en txt sin validacion
 import tkinter as tk
 from tkinter import messagebox
+import re
+
+def guardar_datos():
+    # Obtener los datos de los campos
+    nombres = tbNombre.get()
+    apellidos = tbApellidos.get()
+    edad = tbEdad.get()
+    estatura = tbEstatura.get()
+    telefono = tbTelefono.get()
+
+    # Obtener el género seleccionado
+    genero = ""
+    if var_genero.get() == 1:
+        genero = "Hombre"
+    elif var_genero.get() == 2:
+        genero = "Mujer"
+
+    # Validar que los campos tengan el formato correcto
+    if (es_entero_valido(edad) and es_decimal_valido(estatura) and
+        es_entero_valido_de_10_digitos(telefono) and es_texto_valido(nombres)
+        and es_texto_valido(apellidos)):
+        
+        # Crear una cadena con los datos
+        datos = f"Nombres: {nombres}\nApellidos: {apellidos}\nEdad: {edad} años\nEstatura: {estatura} cm\nTeléfono: {telefono}\nGénero: {genero}"
+
+        # Guardar los datos en un archivo de texto
+        with open("datos01-10-25.txt", "a") as archivo:
+            archivo.write(datos + "\n\n")
+
+        # Mostrar un mensaje con los datos capturados
+        messagebox.showinfo("Información", "Datos guardados con éxito:\n\n" + datos)
+
+        # Limpiar los controles después de guardar
+        limpiar_campos()
+    else:
+        messagebox.showerror("Error", "Por favor, ingrese datos válidos en los campos.")
+
 #---------------------------definicion de funciones-------------------------------
 def limpiar_campos():
     tbNombre.delete(0, tk.END)
@@ -12,31 +49,26 @@ def limpiar_campos():
     var_genero.set(0)
 def borrar_fun():
     limpiar_campos()
-def guardar_valores():
-    #-----------------obtener valores de los entrys----------------------
-    nombres=tbNombre.get()
-    apellidos=tbApellidos.get()
-    edad=tbEdad.get()
-    estatura=tbEstatura.get()
-    telefono=tbTelefono.get()
-    #--------------------obtener el genero de los radiobuttons--------------------
-    genero=""
-    if var_genero.get() == 1:
-        genero= "Hombre"
-    elif var_genero.get() ==2:
-        genero="Mujer"
-    #-------------------Generar la cadena de caracteres--------------------------
-    datos = "Nombres: "+nombres+"\n"+ "Apellidos: "+apellidos+"\n"+"Edad: "+edad+" anos"+"\n"+"Estatura: "+"\n"+"Estatura: "+estatura+"\n"+"Telefono: "+telefono+"\n"+"Genero: "+genero+"\n"
-    with open("250904Datos.txt", "a") as archivo:
-        archivo.write(datos+"\n\n")
-    #-------------------Mostrar mensaje de confirmacion---------------------------
-    messagebox.showinfo("informacion", "Datos guardados con exito: \n\n"+datos)
-    tbNombre.delete(0, tk.END)
-    tbApellidos.delete(0, tk.END)
-    tbEdad.delete(0, tk.END)
-    tbEstatura.delete(0, tk.END)
-    tbTelefono.delete(0, tk.END)
-    var_genero.set(0)
+
+def es_entero_valido(valor):
+    try:
+        int(valor)
+        return True
+    except ValueError:
+        return False
+
+def es_decimal_valido(valor):
+    try:
+        float(valor)
+        return True
+    except ValueError:
+        return False
+
+def es_entero_valido_de_10_digitos(valor):
+    return valor.isdigit() and len(valor) == 10
+
+def es_texto_valido(valor):
+    return bool(re.match("^[a-zA-Z\s]+$", valor))
 
 #-------------------Creacion de ventanas-----------------------------------
 ventana = tk.Tk()
@@ -74,7 +106,7 @@ rbMujer.pack()
 #--------------------Creacion de botones--------------------------------
 btnBorrar= tk.Button(ventana, text="Borrar valores", command = borrar_fun)
 btnBorrar.pack()
-btnGuardar=tk.Button(ventana, text="Guardar valores", command = guardar_valores)
+btnGuardar=tk.Button(ventana, text="Guardar valores", command = guardar_datos)
 btnGuardar.pack()
 #---------------------------------------Ejecucion de ventana------------------------------
 ventana.mainloop()
