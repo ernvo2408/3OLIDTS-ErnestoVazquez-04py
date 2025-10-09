@@ -3,6 +3,28 @@
 import tkinter as tk
 from tkinter import messagebox
 import re
+import mysql.connector
+
+def insertarRegistro(nombres, apellidos, edad, estatura, telefono, genero):
+    try:
+        conexion = mysql.connector.Connect(
+            host = "localhost",  #127.0.0.1
+            user = "root",
+            password = "",
+            database = "programacionavanzada",
+            port = "3306"
+            )
+        cursor = conexion.cursor()
+
+        StringQuery = "INSERT INTO registros (Nombre, Apellidos, Edad, Estatura, Telefono, Genero) VALUES (%s,%s,%s,%s,%s,%s)"
+        valores = nombres, apellidos, edad, estatura, telefono, genero
+        cursor.execute(StringQuery, valores)
+        conexion.commit()
+        cursor.close()
+        conexion.close()
+        messagebox.showinfo("Insercion correcta", "Datos insertados correctamente en la base de datos")
+    except mysql.connector.Error as err:
+        messagebox.showerror("Error en la conexion de la base de datos", f"Error al insertar datos: {err}")
 
 def guardar_datos():
     # Obtener los datos de los campos
@@ -23,9 +45,13 @@ def guardar_datos():
     if (es_entero_valido(edad) and es_decimal_valido(estatura) and
         es_entero_valido_de_10_digitos(telefono) and es_texto_valido(nombres)
         and es_texto_valido(apellidos)):
+
+        insertarRegistro(nombres, apellidos, edad, estatura, telefono, genero)
         
         # Crear una cadena con los datos
-        datos = f"Nombres: {nombres}\nApellidos: {apellidos}\nEdad: {edad} años\nEstatura: {estatura} cm\nTeléfono: {telefono}\nGénero: {genero}"
+        datos = ("Nombres: " + nombres + "\n" + "Apellidos: " + apellidos + "\n" + "Edad: " + edad + " años\n"
+                 + "Estatura: " + estatura + " cm\n" + "Telefono: " + telefono + "\n" + "Genero: " + genero)
+        #datos = f"Nombres: {nombres}\nApellidos: {apellidos}\nEdad: {edad} años\nEstatura: {estatura} cm\nTeléfono: {telefono}\nGénero: {genero}"
 
         # Guardar los datos en un archivo de texto
         with open("datos01-10-25.txt", "a") as archivo:

@@ -12,3 +12,66 @@ Estatura: 1.65 cm
 Teléfono: 9681066738
 Género: Hombre
 
+Nombres: Ernesto
+Apellidos: Vazquez
+Edad: 19 años
+Estatura: 1.65 cm
+Teléfono: 9681066739
+Género: Hombre
+
+Nombres: juanito
+Apellidos: Guerrero
+Edad: 34 años
+Estatura: 1.23 cm
+Teléfono: 9681066739
+Género: Hombre
+
+Nombres: juanito
+Apellidos: Culiacan
+Edad: 23 años
+Estatura: 1.78 cm
+Teléfono: 9681066739
+Género: Hombre
+
+Nombres: lol
+Apellidos: paquito
+Edad: 18 años
+Estatura: 1.45 cm
+Teléfono: 9681066739
+Género: Hombre
+
+Nombres: Joaquin
+Apellidos: Guerrero
+Edad: 32 años
+Estatura: 1.76 cm
+Teléfono: 9681066739
+Género: Hombre
+
+Nombres: juan
+Apellidos: lopez
+Edad: 18 años
+Estatura: 1.54 cm
+Teléfono: 1234567890
+Género: Hombre
+
+Nombres: Joaquin
+Apellidos: Gabriel
+Edad: 22 años
+Estatura: 1.78cm
+Telefono: 9681066739
+Genero: Hombre
+
+Nombres: Juan
+Apellidos: Guerrero
+Edad: 34 años
+Estatura: 1.87 cm
+Telefono: 9681066739
+Genero: Hombre
+
+Nombres: Juan
+Apellidos: Lopez
+Edad: 34 años
+Estatura: 1.89 cm
+Telefono: 9681066739
+Genero: Hombre
+
